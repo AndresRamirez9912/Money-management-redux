@@ -1,17 +1,12 @@
 import { LoginComponent } from './components/auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { dashboardRoutes } from './components/dashboard/dashboard.routes';
-import { IncomeExpenseComponent } from './components/incomeExpense/income-expense.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
   {
     path: 'login',
     component: LoginComponent,
@@ -27,11 +22,11 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
   },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
 ];

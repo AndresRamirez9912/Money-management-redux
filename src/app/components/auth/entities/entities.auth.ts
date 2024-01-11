@@ -56,3 +56,32 @@ export interface IVerifyUserResponse {
   success: boolean;
   response: boolean;
 }
+
+export interface ILoginResponse {
+  success: boolean;
+  response: {
+    AuthenticationResult: {
+      AccessToken?: string;
+      ExpiresIn?: string;
+      IdToken?: string;
+      NewDeviceMetadata?: any;
+      RefreshToken?: string;
+      TokenType?: string;
+    };
+    ChallengeName: string;
+    ChallengeParameters: {
+      FRIENDLY_DEVICE_NAME?: string;
+      USER_ID_FOR_SRP?: string;
+    };
+    Session: string;
+  };
+  errorCode: number;
+  errorMessage: string;
+}
+
+export interface ILogOutResponse {
+  success: boolean;
+  response: boolean;
+  errorCode: number;
+  errorMessage: string;
+}

@@ -8,4 +8,6 @@ export interface authState {
   errorMessage: string;
   errorCode: number;
   isLoading: boolean;
+  accessToken: string;
+  IdToken: string;
 }
