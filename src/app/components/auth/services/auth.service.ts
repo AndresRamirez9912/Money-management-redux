@@ -10,12 +10,14 @@ import { environment } from 'src/environments/environment';
 import { User } from '../entities/entities.auth';
 import { urlBuilder } from 'src/app/utils/url-builder';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { authState } from '../store/auth.state';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store<authState>) {}
 
   createUser(user: User): Observable<ISignUpResponse> {
     const bodyRequest: IGenericUserRequest = {

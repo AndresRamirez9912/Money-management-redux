@@ -1,3 +1,5 @@
+import { AppState } from '@capacitor/app';
+
 export interface authState {
   isLogged: boolean;
   session: string;
@@ -10,4 +12,8 @@ export interface authState {
   isLoading: boolean;
   accessToken: string;
   IdToken: string;
+}
+
+export interface appStateWithAuth extends AppState {
+  auth: authState;
 }

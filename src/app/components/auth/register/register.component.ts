@@ -7,6 +7,7 @@ import { signUpUser } from '../store/auth.actions';
 import { appState } from 'src/app/store/app.reducer';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { appStateWithAuth } from '../store/auth.state';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<appState>,
+    private store: Store<appStateWithAuth>,
     private router: Router
   ) {}
 
